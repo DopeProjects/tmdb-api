@@ -1,11 +1,7 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
-class Tmdb_model extends CI_Model {
+<?php
+class Tmdb_model {
 
   function __construct()
-    {
-        parent::__construct();
-    }
     function get_movie_info($tmdb_id='')
     {
       if($tmdb_id =='' || $tmdb_id==NULL):
