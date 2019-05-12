@@ -4,7 +4,7 @@ function get_movie_info($tmdb_id='')
       if($tmdb_id =='' || $tmdb_id==NULL):
         $tmdb_id  = '00000000';
       endif;
-      $data           = file_get_contents('http://xxxxxxxxx.net/scrapper/v20/get_movie_json/none/'.$tmdb_id);
+      $data           = file_get_contents('https://api.themoviedb.org/3/movie/'.$tmdb_id.'?api_key=xxxxxxxxxxx);
       $data           = json_decode($data, true);
       if(isset($data['error_message'])){
         $response['status']    = 'fail';
@@ -31,11 +31,11 @@ function get_movie_info($tmdb_id='')
           $response['title']          = $data['title'];
           $response['plot']           = $data['overview'];
           $response['runtime']        = $data['runtime'].' Min';
-          $response['actor']          = $actors;//$this->common_model->get_star_ids('actor',$data['Actors']);
-          $response['director']       = $directors;//$this->common_model->get_star_ids('director',$data['Director']);
-          $response['writer']         = $writters;//$this->common_model->get_star_ids('writer',$data['Writer']);
-          $response['country']        = $countries;//$this->common_model->get_country_ids($data['Country']);
-          $response['genre']          = $genres;//$this->common_model->get_genre_ids($movie->getGenres());
+          $response['actor']          = $actors;
+          $response['director']       = $directors;
+          $response['writer']         = $writters;
+          $response['country']        = $countries;
+          $response['genre']          = $genres;
           $response['rating']         = $data['vote_average'];
           $response['release']        = $data['release_date'];
           $response['thumbnail']      = 'https://image.tmdb.org/t/p/w185/'.$data['poster_path'];
