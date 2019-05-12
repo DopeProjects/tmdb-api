@@ -1,4 +1,5 @@
-    function get_movie_info($tmdb_id='')
+<?php 
+function get_movie_info($tmdb_id='')
     {
       if($tmdb_id =='' || $tmdb_id==NULL):
         $tmdb_id  = '00000000';
