@@ -1,7 +1,5 @@
 <?php
 class Tmdb_model {
-
-  function __construct()
     function get_movie_info($tmdb_id='')
     {
       if($tmdb_id =='' || $tmdb_id==NULL):
